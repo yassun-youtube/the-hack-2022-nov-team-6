@@ -1,6 +1,6 @@
 # the-hack-2022-nov-team-6
 
-## チーム6 決まりごと
+## 決まりごと
 
 ### git運用
 #### github-flow
