@@ -1,8 +1,17 @@
 import Link from 'next/link'
 
-export default function GlobalNav() {
+type Props = {
+  isMobileMenuActive: boolean
+}
+
+const GlobalNav = ({ isMobileMenuActive }: Props) => {
   return (
-    <nav aria-label='Global' className='absolute md:static md:block top-16 left-0 w-full md:w-auto'>
+    <nav
+      aria-label='Global'
+      className={`${
+        isMobileMenuActive ? 'absolute' : 'hidden'
+      } absolute md:static md:block top-16 left-0 w-full md:w-auto`}
+    >
       <ul className='flex flex-col md:flex-row gap-px md:gap-x-4 bg-bg md:bg-inherit'>
         <li>
           <Link
@@ -30,7 +39,7 @@ export default function GlobalNav() {
           <ul className='hidden'>
             <li>
               <Link
-                href='#'
+                href='../../sample'
                 className='flex md:block justify-between after:content-["»"] md:after:content-none after:mr-1 after:text-link md:hover:text-link md:hover:underline md:hover:decoration-wavy md:block p-3 md:p-0 bg-zinc-500/20 active:bg-zinc-500/30 md:bg-inherit active:md:bg-inherit'
               >
                 リスト項目1
@@ -56,13 +65,15 @@ export default function GlobalNav() {
         </li>
         <li>
           <Link
-            href='#'
+            href='../../sample/html-template'
             className='flex md:block justify-between after:content-["»"] md:after:content-none after:mr-1 after:text-link md:hover:text-link md:hover:underline md:hover:decoration-wavy md:block p-3 md:p-0 bg-zinc-500/20 active:bg-zinc-500/30 md:bg-inherit active:md:bg-inherit'
           >
-            サイトマップ
+            テンプレート(仮)
           </Link>
         </li>
       </ul>
     </nav>
   )
 }
+
+export default GlobalNav
